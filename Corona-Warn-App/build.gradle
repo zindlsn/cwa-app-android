@@ -181,6 +181,10 @@ android {
             }
         }
     }
+    configurations.all() {
+        resolutionStrategy.force "org.antlr:antlr4-tool:4.5.3"
+    }
+
 
 }
 
@@ -241,7 +245,7 @@ dependencies {
     // QR
     implementation('com.journeyapps:zxing-android-embedded:4.1.0') { transitive = false }
     // noinspection GradleDependency - needed for SDK 23 compatibility, in combination with com.journeyapps:zxing-android-embedded:4.1.0
-    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.google.zxing:core:3.4.0'
 
     // TESTING
     testImplementation 'junit:junit:4.13'
@@ -259,7 +263,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.work:work-testing:2.3.4'
     androidTestImplementation "io.mockk:mockk-android:1.10.0"
-    debugImplementation 'androidx.fragment:fragment-testing:1.2.4'
+    debugImplementation 'androidx.fragment:fragment-testing:1.2.5'
 
     // Play Services
     implementation 'com.google.android.play:core:1.7.3'
@@ -293,7 +297,7 @@ dependencies {
     implementation 'joda-time:joda-time:2.10.6'
 
     // SECURITY
-    implementation "androidx.security:security-crypto:1.0.0-rc02"
+    implementation "androidx.security:security-crypto:1.1.0-alpha01"
     implementation 'net.zetetic:android-database-sqlcipher:4.4.0'
     implementation 'org.conscrypt:conscrypt-android:2.4.0'
 
